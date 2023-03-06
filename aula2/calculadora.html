@@ -57,7 +57,6 @@
       const films = await Promise.all(promises);
       return films;
     };
-
     getStarWarsFilmsAwait().then(films => console.log(films)).catch(error => console.error(error));
 
   </script>
