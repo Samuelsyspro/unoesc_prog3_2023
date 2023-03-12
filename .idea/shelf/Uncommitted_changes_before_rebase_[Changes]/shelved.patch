@@ -1,0 +1,37 @@
+Index: aula1/aula01.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//pagina inicial do site\r\n<html>\r\n<head>\r\n<meta charset=\"utf-8\">\r\n<title>aula 1</title>\r\n</head>\r\n<body>\r\n    <script>\r\n        //função fatorial em javascript\r\nfunction factorial(num) {\r\n    let result = 1;\r\n    for (let i = 1; i <= num; i++) {\r\n      result *= i;\r\n    }\r\n    return result;\r\n  }\r\n\r\n    console.log(factorial(3));\r\n\r\n\r\n// Path: fatorial.js recursivo\r\n//function factorial(num) {\r\n//    if (num === 0) {\r\n//        return 1;\r\n//    }\r\n//    return num * factorial(num - 1);\r\n//}\r\n\r\n//console.log(factorial(5));\r\n\r\n//função que entra com altura e sexo de 5 pessoas e retorna quantas são mulheres e quantos são homens, a maior altura e se é homem ou mulher\r\n\r\nfunction analyzePeople(people) {\r\n    let maleCount = 0;\r\n    let femaleCount = 0;\r\n    let tallestPerson = { height: 0, gender: \"\" };\r\n    for (let i = 0; i < people.length; i++) {\r\n        if (people[i].gender === \"male\") {\r\n            maleCount++;\r\n        } else {\r\n            femaleCount++;\r\n        }\r\n        if (people[i].height > tallestPerson.height) {\r\n            tallestPerson = people[i];\r\n        }\r\n    }\r\n    return {\r\n        maleCount: maleCount,\r\n        femaleCount: femaleCount,\r\n        tallestPerson: tallestPerson\r\n    };\r\n}\r\n\r\nlet people = [\r\n    { height: 170, gender: \"male\" },\r\n    { height: 160, gender: \"female\" },\r\n    { height: 165, gender: \"male\" },\r\n    { height: 170, gender: \"female\" },\r\n    { height: 175, gender: \"male\" }\r\n];\r\n\r\nlet result = analyzePeople(people);\r\nconsole.log(result);\r\n\r\n//função que retorna um array com a quantidade de números primos até o número passado como parâmetro\r\nfunction primos(quantidade) {\r\n    let numeros = [];\r\n    let numero = 2;\r\n    while (numeros.length < quantidade) {\r\n        let primo = true;\r\n        for (let i = 2; i < numero; i++) {\r\n            if (numero % i === 0) {\r\n                primo = false;\r\n                break;\r\n            }\r\n        }\r\n        if (primo) {\r\n            numeros.push(numero);\r\n        }\r\n        numero++;\r\n    }\r\n    return numeros;\r\n}\r\nconsole.log(primos(4));\r\n//função que recebe 3 lados de um triangulo e retorna o tipo de triangulo\r\nfunction tipoTriangulo(a, b, c) {\r\n    if (a == b && b == c) {\r\n        return \"Equilátero\";\r\n    } else if (a == b || b == c || a == c) {\r\n        return \"Isósceles\";\r\n    } else {\r\n        return \"Escaleno\";\r\n    }\r\n}\r\n\r\nconsole.log(tipoTriangulo(3, 5, 9));\r\n    </script>\r\n<h1>aula 1</h1>\r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/aula1/aula01.html b/aula1/aula01.html
+--- a/aula1/aula01.html	(revision f0b39551ac8ba5ebdf9df4c41583a02edbeb075b)
++++ b/aula1/aula01.html	(date 1678070459966)
+@@ -29,7 +29,6 @@
+ //console.log(factorial(5));
+ 
+ //função que entra com altura e sexo de 5 pessoas e retorna quantas são mulheres e quantos são homens, a maior altura e se é homem ou mulher
+-
+ function analyzePeople(people) {
+     let maleCount = 0;
+     let femaleCount = 0;
+Index: aula2/calculadora.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"pt\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <title>Calculadora</title>\r\n<body>\r\n<h3>Atividade js lambda</h3>\r\n\r\n  <script>\r\n    console.log('calculadora call back');\r\n    const callback = (a, b, operacao) => operacao(a, b);\r\n    console.groupEnd();\r\n    const soma = (a, b) => a + b;\r\n    console.log(' soma', callback(2, 3, soma));\r\n    const subtracao = (a, b) => a - b;\r\n    console.log('subtração', callback(2, 3, subtracao));\r\n    const multiplicacao = (a, b) => a * b;\r\n    console.log('multiplicação', callback(2, 3, multiplicacao));\r\n    const divisao = (a, b) => a / b;\r\n    console.log('divisao', callback(2, 3, divisao));\r\n    const potencia = (a, b) => a ** b;\r\n    console.log('potencia', callback(2, 3, potencia));\r\n\r\n    //equação valor X\r\n    const resultado = (x) => Math.pow(3*x, 2) + 2*x - 5;\r\n    const x = Number(prompt(\"Digite o valor de x:\"));\r\n    console.log(`O resultado é: ${resultado(x)}`);\r\n\r\n//catfact\r\n    const getCatFact = async () => {\r\n      try {\r\n        const response = await fetch('https://catfact.ninja/facts');\r\n        const data = await response.json();\r\n        const catFact = data.data.map(fact => fact.fact);\r\n        console.log('catFact', catFact);\r\n        return catFact;\r\n      } catch (error) {\r\n        console.error(error);\r\n      }\r\n    };\r\n    console.log('getCatFact', getCatFact());\r\n\r\n    //star wars\r\n    const getStarWarsFilms = async () => {\r\n      const films = await Promise.all(Array.from({ length: 6 }, (_, i) => fetch(`https://swapi.dev/api/films/${i + 1}`).then(response => response.json())));\r\n      return films;\r\n    }\r\n\r\n    getStarWarsFilms().then(films => console.log(films)).catch(error => console.error(error));\r\n//star wars await\r\n    const getStarWarsFilmsAwait = async () => {\r\n      const promises = [];\r\n      for (let i = 1; i <= 6; i++) {\r\n        promises.push(fetch(`https://swapi.dev/api/films/${i}`).then(response => response.json()));\r\n      }\r\n      const films = await Promise.all(promises);\r\n      return films;\r\n    };\r\n\r\n    getStarWarsFilmsAwait().then(films => console.log(films)).catch(error => console.error(error));\r\n\r\n  </script>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/aula2/calculadora.html b/aula2/calculadora.html
+--- a/aula2/calculadora.html	(revision f0b39551ac8ba5ebdf9df4c41583a02edbeb075b)
++++ b/aula2/calculadora.html	(date 1678070459985)
+@@ -59,7 +59,6 @@
+     };
+ 
+     getStarWarsFilmsAwait().then(films => console.log(films)).catch(error => console.error(error));
+-
+   </script>
+ </body>
+ </html>
+\ No newline at end of file
