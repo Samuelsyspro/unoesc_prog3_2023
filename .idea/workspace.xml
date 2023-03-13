@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ff2ea87-7170-4b1e-acb5-c688928bab33" name="Changes" comment="Atividades aula 3">
-      <change afterPath="$PROJECT_DIR$/aula3/exercicio2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aula3/exercicio3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aula3/exercicio2.html" beforeDir="false" afterPath="$PROJECT_DIR$/aula3/exercicio2.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678659971777</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Atividades aula 3">
+      <created>1678668720568</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678668720568</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
