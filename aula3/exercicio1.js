@@ -11,4 +11,4 @@ if (delta < 0) {
     const x1 = (-b + Math.sqrt(delta)) / (2*a);
     const x2 = (-b - Math.sqrt(delta)) / (2*a);
     console.log(`As raízes da função são ${x1.toFixed(2)} e ${x2.toFixed(2)}.`);
-}
+}//
