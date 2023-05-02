@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Calcular dias de vida</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      margin: 1rem auto;
+      max-width: 30rem;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3e8e41;
+    }
+
+    #resultado {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    @media only screen and (max-width: 600px) {
+      form {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+<h1>Calcular dias de vida</h1>
+<form>
+  <label for="nome">Nome:</label>
+  <input type="text" id="nome" name="nome">
+
+  <label for="idade">Idade:</label>
+  <input type="number" id="idade" name="idade">
+
+  <button type="button" onclick="calcularDiasDeVida()">Calcular</button>
+</form>
+
+<p id="resultado"></p>
+
+<script>
+  function calcularDiasDeVida() {
+    const nome = document.getElementById('nome').value;
+    const idade = parseInt(document.getElementById('idade').value);
+
+    const diasDeVida = idade * 365;
+
+    const resultado = document.getElementById('resultado');
+    resultado.textContent = `${nome.toUpperCase()}, você já viveu ${diasDeVida} dias.`;
+  }
+</script>
+</body>
+</html>
